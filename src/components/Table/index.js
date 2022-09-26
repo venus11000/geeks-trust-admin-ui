@@ -4,7 +4,7 @@ import Pagination from "./Pagination";
 
 import "./style.css";
 
-const Table = () => {
+const Table = ({ data, handlePagination }) => {
   return (
     <div>
       <table className="table">
@@ -21,61 +21,35 @@ const Table = () => {
         </thead>
 
         <tbody>
-          <tr className="row">
-            <td>
-              <Checkbox />
-            </td>
-            <td>Venugopal</td>
-            <td>venugopala11000@gmail.com</td>
-            <td>Admin</td>
-            <td>
-              <button className="action-btn">
-                <i className="fa-regular fa-pen-to-square"></i>
-              </button>
-              <button className="action-btn delete-btn">
-                <i className="fa-solid fa-trash-can"></i>
-              </button>
-            </td>
-          </tr>
-          <tr className="row">
-            <td>
-              <Checkbox />
-            </td>
-            <td>Venugopal</td>
-            <td>venugopala11000@gmail.com</td>
-            <td>Admin</td>
-            <td>
-              <button className="action-btn">
-                <i className="fa-regular fa-pen-to-square"></i>
-              </button>
-              <button className="action-btn delete-btn">
-                <i className="fa-solid fa-trash-can"></i>
-              </button>
-            </td>
-          </tr>
-          <tr className="row">
-            <td>
-              <Checkbox />
-            </td>
-            <td>Venugopal</td>
-            <td>venugopala11000@gmail.com</td>
-            <td>Admin</td>
-            <td>
-              <button className="action-btn">
-                <i className="fa-regular fa-pen-to-square"></i>
-              </button>
-              <button className="action-btn delete-btn">
-                <i className="fa-solid fa-trash-can"></i>
-              </button>
-            </td>
-          </tr>
+          {data?.records?.map((user) => (
+            <tr key={`user-${user.id}`} className="row">
+              <td>
+                <Checkbox />
+              </td>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.role}</td>
+              <td>
+                <button className="action-btn">
+                  <i className="fa-regular fa-pen-to-square"></i>
+                </button>
+                <button className="action-btn delete-btn">
+                  <i className="fa-solid fa-trash-can"></i>
+                </button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       <div className="table-footer">
         <button className="delete-selection-btn">Delete Selected</button>
 
-        <Pagination />
+        <Pagination
+          totalPages={data.totalPages}
+          activePage={data.activePage}
+          handlePagination={handlePagination}
+        />
       </div>
     </div>
   );
