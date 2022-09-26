@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.e42899f2.css",
-    "main.js": "/react-gh-pages/static/js/main.59489d45.js",
-    "static/js/787.6335e7d5.chunk.js": "/react-gh-pages/static/js/787.6335e7d5.chunk.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.e42899f2.css.map": "/react-gh-pages/static/css/main.e42899f2.css.map",
-    "main.59489d45.js.map": "/react-gh-pages/static/js/main.59489d45.js.map",
-    "787.6335e7d5.chunk.js.map": "/react-gh-pages/static/js/787.6335e7d5.chunk.js.map"
+    "main.css": "/geek-trust-admin-ui/static/css/main.e42899f2.css",
+    "main.js": "/geek-trust-admin-ui/static/js/main.a9071085.js",
+    "static/js/787.6335e7d5.chunk.js": "/geek-trust-admin-ui/static/js/787.6335e7d5.chunk.js",
+    "index.html": "/geek-trust-admin-ui/index.html",
+    "main.e42899f2.css.map": "/geek-trust-admin-ui/static/css/main.e42899f2.css.map",
+    "main.a9071085.js.map": "/geek-trust-admin-ui/static/js/main.a9071085.js.map",
+    "787.6335e7d5.chunk.js.map": "/geek-trust-admin-ui/static/js/787.6335e7d5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e42899f2.css",
-    "static/js/main.59489d45.js"
+    "static/js/main.a9071085.js"
   ]
 }
