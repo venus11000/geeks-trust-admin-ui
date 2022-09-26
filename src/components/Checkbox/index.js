@@ -8,7 +8,7 @@ const Checkbox = ({ onChange = () => {}, checked = false }) => {
       className="checkbox"
       type="checkbox"
       onChange={onChange}
-      value={checked}
+      checked={checked}
     />
   );
 };

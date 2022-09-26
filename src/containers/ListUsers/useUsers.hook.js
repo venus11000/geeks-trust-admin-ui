@@ -11,6 +11,8 @@ const useUsers = () => {
 
   const deleteUser = (id) => setUsers(users.filter(user => user.id !== id));
 
+  const deleteUsersBatch = (ids) => setUsers(users.filter(user => !ids.includes(user.id)));
+
   const handlePagination = (page) => {
     setActivePage(page);
   };
@@ -29,7 +31,8 @@ const useUsers = () => {
     users,
     response,
     handlePagination,
-    deleteUser
+    deleteUser,
+    deleteUsersBatch
   };
 };
 
