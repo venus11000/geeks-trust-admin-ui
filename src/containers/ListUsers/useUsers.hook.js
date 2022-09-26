@@ -9,9 +9,24 @@ const useUsers = () => {
   const [activePage, setActivePage] = useState(0);
   const response = usePagination(users, activePage);
 
-  const deleteUser = (id) => setUsers(users.filter(user => user.id !== id));
+  const filterUsers = (searchText) => {
+    if (searchText) {
+      const filteredData = users.filter(
+        (user) =>
+          user.name.toLowerCase().includes(searchText.toLowerCase()) ||
+          user.email.toLowerCase().includes(searchText.toLowerCase()) ||
+          user.role.toLowerCase().includes(searchText.toLowerCase())
+      );
+      setUsers(filteredData);
+    } else {
+      setUsers(usersResponse);
+    }
+  };
 
-  const deleteUsersBatch = (ids) => setUsers(users.filter(user => !ids.includes(user.id)));
+  const deleteUser = (id) => setUsers(users.filter((user) => user.id !== id));
+
+  const deleteUsersBatch = (ids) =>
+    setUsers(users.filter((user) => !ids.includes(user.id)));
 
   const handlePagination = (page) => {
     setActivePage(page);
@@ -32,7 +47,8 @@ const useUsers = () => {
     response,
     handlePagination,
     deleteUser,
-    deleteUsersBatch
+    deleteUsersBatch,
+    filterUsers,
   };
 };
 
