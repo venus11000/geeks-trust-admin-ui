@@ -7,11 +7,11 @@ import "./style.css";
 import useUsers from "./useUsers.hook";
 
 const ListUsers = () => {
-  const { response, handlePagination } = useUsers();
+  const { response, handlePagination, deleteUser } = useUsers();
   return (
     <div className="list-users-container">
       <SearchBox />
-      <Table data={response} handlePagination={handlePagination}/>
+      <Table data={response} handlePagination={handlePagination} deleteUser={deleteUser}/>
     </div>
   );
 };

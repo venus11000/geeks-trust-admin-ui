@@ -9,6 +9,8 @@ const useUsers = () => {
   const [activePage, setActivePage] = useState(0);
   const response = usePagination(users, activePage);
 
+  const deleteUser = (id) => setUsers(users.filter(user => user.id !== id));
+
   const handlePagination = (page) => {
     setActivePage(page);
   };
@@ -27,6 +29,7 @@ const useUsers = () => {
     users,
     response,
     handlePagination,
+    deleteUser
   };
 };
 

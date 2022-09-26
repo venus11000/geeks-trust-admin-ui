@@ -4,7 +4,7 @@ import Pagination from "./Pagination";
 
 import "./style.css";
 
-const Table = ({ data, handlePagination }) => {
+const Table = ({ data, handlePagination, deleteUser }) => {
   return (
     <div>
       <table className="table">
@@ -33,7 +33,10 @@ const Table = ({ data, handlePagination }) => {
                 <button className="action-btn">
                   <i className="fa-regular fa-pen-to-square"></i>
                 </button>
-                <button className="action-btn delete-btn">
+                <button
+                  className="action-btn delete-btn"
+                  onClick={() => deleteUser(user.id)}
+                >
                   <i className="fa-solid fa-trash-can"></i>
                 </button>
               </td>
