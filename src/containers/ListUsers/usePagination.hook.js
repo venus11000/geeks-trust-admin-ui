@@ -10,10 +10,12 @@ const usePagination = (data = [], page = 0) => {
   const pageSize = 10;
 
   useEffect(() => {
-    setActivePage(0);
+    // setActivePage(0);
     setTotalDocs(data.length);
     setTotalPages(Math.ceil(data.length / pageSize));
-    const newRecords = data.slice(0, pageSize);
+    const start = page === 0 ? 0 : page * pageSize;
+    const end = page === 0 ? pageSize : (page + 1) * pageSize;
+    const newRecords = data.slice(start, end);
     setRecords(newRecords)
   }, [data]);
 

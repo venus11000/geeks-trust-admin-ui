@@ -32,14 +32,14 @@ const Pagination = ({ totalPages = 0, activePage, handlePagination }) => {
       <button
         className="paginate-btn"
         onClick={() => handlePagination(activePage + 1)}
-        disabled={activePage === totalPages}
+        disabled={activePage === totalPages - 1}
       >
         <i className="fa-solid fa-angle-right"></i>
       </button>
       <button
         className="paginate-btn"
         onClick={() => handlePagination(totalPages - 1)}
-        disabled={activePage === totalPages}
+        disabled={activePage === totalPages - 1}
       >
         <i className="fa-solid fa-angles-right"></i>
       </button>
